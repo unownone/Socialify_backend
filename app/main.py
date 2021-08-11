@@ -1,6 +1,6 @@
 #MODULE IMPORTS
 
-from flask import Flask,jsonify,request
+from flask import Flask,jsonify,request,render_template
 from flask_pymongo import PyMongo
 import secrets
 from .config import Config
@@ -18,6 +18,13 @@ mongo = PyMongo(app)
 user_db=mongo.db.user.user_data
 media_db=mongo.db.media
 
+########################################
+########################################
+#############BASIC######################
+########################################
+@app.route('/')
+def base():
+    return render_template("index.html")
 ########################################
 #############USER MANAGEMENT############
 ########################################

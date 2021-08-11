@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Socialify Social media Template</title>
+  <link rel=stylesheet href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <style>
+    div.a {
+    word-wrap: normal;
+    }
+    </style>
+</head>
+<body>
+    <h1>Socialify Backend Template</h1>
+    <h2>SETTING UP:</h2>
+    <div class="a">To set up the server all you have to do is , clone and create your own repository , go to heroku, create heroku app with pipeline as github and deploy with environment variables:
+'master_key' : Your master key for encryption , keep it hidden and safe as it handles encyrption 'MONGO_URI' : pass your mongo uri with dbname and password . Make sure you pass the password and name too !</div>
+    <br>
+    <h2>API ENDPOINTS</h2>
+    <ul>
+        <div class="a">
+        <h3>/signup/</h3>
+        <h4>Method : POST</h4>
+        <p>Accepts : email,password,username .
+        Returns :
+        <ul> 
+        response: UREGSUCS - If user is registered successfully along with api_key: which gives the api key for that user <br>
+        response: UEXISTS - if username/email already exists.
+        <ul>
+        </p>
+        </div>
+        <div class="a">
+        <h4>/user/modify/</h4>
+        <h6>Method : POST</h6>
+        <p>
+        Accepts : api key for a particular account along with old password and new password. Currently only supports password update.<br>
+        Returns: 
+        <ul>
+             response: PUPSUCS - Password Update successful. <br>
+             response: PNOMAT - old password is incorrect. <br>
+             response: PNEWUNV - New password not provided.<br>
+        </ul>
+        </p>
+        </div>
+        <div class="a">
+        <h3>/login/</h3>
+        <h4>Method : POST</h4>
+        <p>Accepts : email/username,password. <br>
+        Returns:
+        <ul>
+            response:  INVALPASS - If the password entered is invalid.<br> 
+            response: UNOEXIST - If username/email is invalid. <br>
+            response: UVAL - User validated along with api_key - which gives the api key for that user.
+        </ul>
+        </p>
+        </div>
+        <div class="a">
+        <h3>/user/"username"/</h3>
+        <p>Accepts : Username uri example '''www.api.com/user/kawaiibeans'''
+        <br>
+        Returns: <br>
+        <ul>
+        response: UFOUND - User found along with data - returns user details like profile picture, posts , groups he has joined.<br>
+        response: UNOFOUND - User doesn't exist.
+        <br>
+        </ul>
+        </p>
+        </div>
+        <div class="a">
+        <h3></h3>
+        <h4></h4>
+        <p></p>
+        </div>
+    </ul>

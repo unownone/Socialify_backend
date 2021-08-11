@@ -70,7 +70,7 @@ def login():
 ########USER UPDATE BLOCK##########
 ##################################
 
-@app.route('/user/modify/',methods='POST')
+@app.route('/user/modify/',methods=['POST'])
 def update():
     data=request.json
     db=user_db.find_one({'api_key':data['api_key']})

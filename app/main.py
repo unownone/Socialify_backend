@@ -41,11 +41,11 @@ def signup():
             key = secrets.token_urlsafe(10)
         #checks if unique
         
-        if not check_pass(data['pass']): return jsonify(response='INVALPASS')
+        if not check_pass(data['password']): return jsonify(response='INVALPASS')
         if not user_db.find_one({'uname':data['username']}) is None:
             return jsonify(response='UEXISTS')
         #checks if password is strong enough , else returns false
-        password,salt=get_pass(data['pass'])
+        password,salt=get_pass(data['password'])
         #gets the salt , and hashed password
         user_db.insert_one({"email":data['email'],"uname":data['username'],"profile_pic":None,"password":password,"api_key":key,"posts":[],"groups":[],"salt":salt,"last_login":datetime.now()})
         #inserts the data into user array , ie user has been registered

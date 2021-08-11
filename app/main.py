@@ -94,7 +94,7 @@ def update():
 ##########USER FETCHING API######
 #################################
 
-@app.route('/user/<uname>')
+@app.route('/user/<uname>/')
 def fetch_user(uname,api_key=None):
     user_val = user_db.find_one({"uname":uname})
     if user_val is not None:

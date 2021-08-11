@@ -1,10 +1,9 @@
 #MODULE IMPORTS
 
 from flask import Flask,jsonify,request
-from bson.objectid import Objectid
 from flask_pymongo import PyMongo
 import secrets
-from config import Config
+from .config import Config
 from .password import get_pass,check_pass
 from datetime import datetime
 from .helpers import objidconv

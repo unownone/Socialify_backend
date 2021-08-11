@@ -15,10 +15,10 @@ import re
 # The salt needs to be stored too.
 #If a salt is provided the method returns the old salt 
 # while if it is not returned it returns a new one
-
+from flask import app as app
 def get_pass(raw_password,salt=None):
     raw_password=bytes(raw_password,'utf8')
-    master_secret_key = bytes(MASTER_KEY,'utf8')
+    master_secret_key = bytes(app.config['MASTER_KEY'],'utf8')
     if salt is None:salt = bcrypt.gensalt()
     else: salt=bytes(salt,'utf8')
     combo_password = raw_password + salt + master_secret_key

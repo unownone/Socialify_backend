@@ -98,7 +98,8 @@ def update():
 def fetch_user(uname):
     user_val = user_db.find_one({"uname":uname})
     if user_val is not None:
-        return jsonify(response='UFOUND',data=objidconv(user_val))
+        data=objidconv(user_val)
+        return jsonify(response='UFOUND',data=data)
     else: return jsonify(response='UNOFOUND')
 #################################
 ##########END OF USER BLOCK######

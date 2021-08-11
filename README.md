@@ -1,6 +1,7 @@
 # Socialify Backend
 
-Socialify provides a nearly no code beployable backend solution for a social media esk application. Built on top of python and mongodb it is very flexible and provides functions like user authentication , user data retrieval , user data update and is easily deployable on Heroku with just your own environment variables and as the project is open source , you can just fork it and modify the code as you like it. It is well documented and commented and hence you don't need to worry much!
+Socialify provides a nearly no code deployable backend solution for a social media esk application. Built on top of python and mongodb it is very flexible and provides functions like user authentication , user data retrieval , user data update and is easily deployable on Heroku with just your own environment variables and as the project is open source , you can just fork it and modify the code as you like it. It is well documented and commented and hence you don't need to worry much!
+
 ---
 ## SETTING UP:
 #### To set up the server all you have to do is , clone and create your own repository , go to heroku, create heroku app with pipeline as github and deploy with environment variables: 
@@ -9,13 +10,14 @@ Socialify provides a nearly no code beployable backend solution for a social med
 'MONGO_URI' : pass your mongo uri with dbname and password . Make sure you pass the password and name too !
 
 #### Modules Used:
-flask
-flask_pymongo
-bcrypt
-dotenv
-virtualenv
-datetime
-secrets
+- flask
+- flask_pymongo
+- bcrypt
+- dotenv
+- virtualenv
+- datetime
+- secrets
+
 ---
 ### Socialify has predefined methods and the main.py is the flask app class. The api includes:
 

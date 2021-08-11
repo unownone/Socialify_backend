@@ -41,7 +41,7 @@ def signup():
             key = secrets.token_urlsafe(10)
         #checks if unique
         
-        if not check_pass(data['password']): return jsonify(response='INVALPASS')
+        #if not check_pass(data['password']): return jsonify(response='INVALPASS')
         if not user_db.find_one({'uname':data['username']}) is None:
             return jsonify(response='UEXISTS')
         #checks if password is strong enough , else returns false

@@ -41,7 +41,7 @@ def signup():
         #checks if password is strong enough , else returns false
         password,salt=get_pass(data['pass'])
         #gets the salt , and hashed password
-        user_db.insert_one({"email":data['email'],"uname":data['username'],"password":password,"api_key":key,"posts":[],"groups":[],"salt":salt,"last_login":datetime.now()})
+        user_db.insert_one({"email":data['email'],"uname":data['username'],"profile_pic":None,"password":password,"api_key":key,"posts":[],"groups":[],"salt":salt,"last_login":datetime.now()})
         #inserts the data into user array , ie user has been registered
         return jsonify(response='UREGSUCS',api_key=key)        
     else: 
@@ -49,7 +49,7 @@ def signup():
 
 
 ######USER LOG IN:
-@app.route('/signup/',methods=['POST'])
+@app.route('/login/',methods=['POST'])
 def login():
     data=request.json
     pass_check=data['pass']
@@ -92,13 +92,9 @@ def update():
 def fetch_user(uname,api_key=None):
     user_val = user_db.find_one({"uname":uname})
     if user_val is not None:
-        if api_key!=None and user_val['api_key']==api_key:
-            return jsonify(response='UFOUND-AD',data=objidconv(user_val))
-        else: return jsonify(response='UFOUND',data=objidconv(user_val))
+        return jsonify(response='UFOUND',data=objidconv(user_val))
     else: return jsonify(response='UNOFOUND')
 #################################
 ##########END OF USER BLOCK######
 #################################
 
-
-        

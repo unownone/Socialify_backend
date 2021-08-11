@@ -2,6 +2,7 @@
 
 Socialify provides a nearly no code deployable backend solution for a social media esk application. Built on top of python and mongodb it is very flexible and provides functions like user authentication , user data retrieval , user data update and is easily deployable on Heroku with just your own environment variables and as the project is open source , you can just fork it and modify the code as you like it. It is well documented and commented and hence you don't need to worry much!
 
+A sample of the project has been deployed at : https://socialifybackend.herokuapp.com/ 
 ---
 ## SETTING UP:
 #### To set up the server all you have to do is , clone and create your own repository , go to heroku, create heroku app with pipeline as github and deploy with environment variables: 

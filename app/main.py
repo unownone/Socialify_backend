@@ -95,7 +95,7 @@ def update():
 #################################
 
 @app.route('/user/<uname>/')
-def fetch_user(uname,api_key=None):
+def fetch_user(uname):
     user_val = user_db.find_one({"uname":uname})
     if user_val is not None:
         return jsonify(response='UFOUND',data=objidconv(user_val))

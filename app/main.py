@@ -4,7 +4,7 @@ from flask import Flask,jsonify,request,render_template
 from flask_pymongo import PyMongo
 import secrets
 from .config import Config
-from .password import get_pass,check_pass
+from .password import get_pass
 from datetime import datetime
 from .helpers import objidconv
 
@@ -100,7 +100,7 @@ def fetch_user(uname):
     if user_val is not None:
         data=objidconv(user_val)
         return jsonify(response='UFOUND',data=data)
-    else: return jsonify(response='UNOFOUND')
+    else: return jsonify(response='UNOFOUND',uid=str(uname['ObjectId']))
 #################################
 ##########END OF USER BLOCK######
 #################################
